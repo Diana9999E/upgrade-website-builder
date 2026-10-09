@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { orderUrlDefault } from "@/lib/data";
+import { orderPath, ordering } from "@/lib/data";
 
 const mainLinks = [
   { href: "/menu", label: "Menu" },
@@ -69,24 +69,32 @@ export default function Header() {
               ))}
             </div>
           </div>
-          <a
+          <Link
             className={`btn btn--primary header-order${hideOrder ? " header-order--hidden" : ""}`}
-            href={orderUrlDefault}
-            target="_blank"
-            rel="noopener"
+            href={orderPath}
+            onClick={() => setOpen(false)}
           >
             Order Online
-          </a>
+          </Link>
         </nav>
 
-        <button
-          className="nav-toggle"
-          aria-label="Menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span /><span /><span />
-        </button>
+        <div className="header-actions">
+          <div
+            className="cart-embed"
+            data-restaurant-orders-cart
+            data-embed-id={ordering.embedId}
+            data-cart-icon="package"
+            data-cart-label="Basket"
+          />
+          <button
+            className="nav-toggle"
+            aria-label="Menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </header>
   );

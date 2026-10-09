@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { site, orderUrlDefault } from "@/lib/data";
+import Link from "next/link";
+import { site, orderPath } from "@/lib/data";
 
 const KEY = "teb_promo_dismissed_v1";
 
@@ -50,9 +51,9 @@ export default function PromoPopup() {
         <p className="eyebrow">{site.promo.eyebrow}</p>
         <h3 style={{ marginBottom: "0.5rem" }}>{site.promo.title}</h3>
         <p>{site.promo.text}</p>
-        <a className="btn btn--primary" href={orderUrlDefault} target="_blank" rel="noopener" onClick={close}>
+        <Link className="btn btn--primary" href={orderPath} onClick={close}>
           {site.promo.cta}
-        </a>
+        </Link>
       </div>
     </div>
   );

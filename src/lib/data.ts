@@ -130,6 +130,16 @@ export const primaryLocation =
 
 export const orderUrlDefault = primaryLocation.orderUrl;
 
+// EatFuti embedded ordering + cart. Order CTAs route to the internal /order
+// page, where the widget renders; the cart lives in the site header.
+export const ordering = {
+  embedId: "8ce3fccd-30c4-4f1e-b294-396a0bdf71d9",
+  loaderSrc: "https://staging.embed.orders.eatfuti.ai/v1/loader.js",
+};
+
+// Internal path to the ordering experience (the embed lives here).
+export const orderPath = "/order";
+
 export const menu: MenuSection[] = [
   {
     id: "bistro-brunch",

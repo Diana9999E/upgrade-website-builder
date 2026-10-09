@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromoPopup from "@/components/PromoPopup";
 import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
-import { site, primaryLocation } from "@/lib/data";
+import { site, primaryLocation, ordering } from "@/lib/data";
 import { restaurantSchema, websiteSchema } from "@/lib/structured-data";
 
 const loc = primaryLocation;
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <PromoPopup />
         <CookieConsent />
+        <Script src={ordering.loaderSrc} strategy="afterInteractive" />
       </body>
     </html>
   );

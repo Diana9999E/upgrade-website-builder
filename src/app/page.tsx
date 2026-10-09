@@ -1,6 +1,6 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import { site, locations, orderUrlDefault, menu } from "@/lib/data";
+import { site, locations, orderPath } from "@/lib/data";
 import { faqSchema } from "@/lib/structured-data";
 
 const featured = [
@@ -40,9 +40,9 @@ export default function Home() {
               and be merry.
             </p>
             <div className="hero__cta">
-              <a className="btn btn--primary js-order-cta" href={orderUrlDefault} target="_blank" rel="noopener">
+              <Link className="btn btn--primary js-order-cta" href={orderPath}>
                 Order Online
-              </a>
+              </Link>
               <Link className="btn btn--ghost" href="/menu">See the menu →</Link>
             </div>
             <div className="hero__meta">
@@ -143,7 +143,7 @@ export default function Home() {
               waffles, or a burger and settle in.
             </p>
             <div className="hero__cta">
-              <a className="btn btn--gold js-order-cta" href={orderUrlDefault} target="_blank" rel="noopener">Order Online</a>
+              <Link className="btn btn--gold js-order-cta" href={orderPath}>Order Online</Link>
               <Link className="btn btn--light" href="/visit">Find a location →</Link>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function Home() {
                 <p className="addr">{l.street}<br />{l.city}, {l.region} {l.postal}</p>
                 <a className="tel" href={l.phoneHref}>{l.phone}</a>
                 <div className="loc-card__actions">
-                  <a className="btn btn--primary js-order-cta" href={l.orderUrl} target="_blank" rel="noopener">Order</a>
+                  <Link className="btn btn--primary js-order-cta" href={orderPath}>Order</Link>
                   <a className="btn btn--ghost" href={l.mapUrl} target="_blank" rel="noopener">Directions</a>
                 </div>
               </div>

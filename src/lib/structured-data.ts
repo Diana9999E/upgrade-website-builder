@@ -1,4 +1,4 @@
-import { site, locations, primaryLocation, menu, faqs, orderUrlDefault } from "./data";
+import { site, locations, primaryLocation, menu, faqs } from "./data";
 
 const RATING_GATE = 4.6;
 
@@ -85,7 +85,7 @@ export function restaurantSchema() {
     hasMenu: menuSchema(),
     potentialAction: {
       "@type": "OrderAction",
-      target: { "@type": "EntryPoint", urlTemplate: orderUrlDefault, inLanguage: "en-US" },
+      target: { "@type": "EntryPoint", urlTemplate: `${site.url}/order`, inLanguage: "en-US" },
       deliveryMethod: ["http://purl.org/goodrelations/v1#DeliveryModePickUp"],
     },
   };

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
-import { menu, orderUrlDefault, type MenuItem } from "@/lib/data";
+import { menu, orderPath, type MenuItem } from "@/lib/data";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const revalidate = 86400; // ISR: re-render the menu daily or on redeploy
@@ -87,9 +87,9 @@ export default function MenuPage() {
               seafood, shellfish, or eggs may increase your risk of foodborne illness. We are not a
               gluten-free, nut-free, or dairy-free kitchen and cannot guarantee against cross contamination.
             </p>
-            <a className="btn btn--primary js-order-cta" href={orderUrlDefault} target="_blank" rel="noopener">
+            <Link className="btn btn--primary js-order-cta" href={orderPath}>
               Order Online
-            </a>{" "}
+            </Link>{" "}
             <Link className="btn btn--ghost" href="/visit">Find a location →</Link>
           </div>
         </div>

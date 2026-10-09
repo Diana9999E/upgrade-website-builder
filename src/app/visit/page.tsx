@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
-import { site, locations } from "@/lib/data";
+import { site, locations, orderPath } from "@/lib/data";
 import { breadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default function Visit() {
                 </p>
                 <a className="tel" href={l.phoneHref}>{l.phone}</a>
                 <div className="loc-card__actions">
-                  <a className="btn btn--primary" href={l.orderUrl} target="_blank" rel="noopener">Order Online</a>
+                  <Link className="btn btn--primary" href={orderPath}>Order Online</Link>
                   <a className="btn btn--ghost" href={l.mapUrl} target="_blank" rel="noopener">Get Directions</a>
                 </div>
               </div>

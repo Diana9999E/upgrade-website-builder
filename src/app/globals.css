@@ -107,6 +107,8 @@ img { max-width: 100%; display: block; }
 .nav__menu a:hover { background: var(--cream-deep); }
 .header-order { }
 .header-order--hidden { visibility: hidden; opacity: 0; pointer-events: none; }
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+.cart-embed { display: inline-flex; align-items: center; min-height: 40px; }
 .nav-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; padding: 0.5rem 0.65rem; cursor: pointer; }
 .nav-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px 0; }
 
@@ -241,6 +243,8 @@ img { max-width: 100%; display: block; }
 .crumbs li::after { content: "\203A"; margin-left: 0.4rem; color: var(--line); }
 .crumbs li:last-child::after { content: ""; }
 .crumbs a { color: var(--ink-soft); }
+
+.order-embed-wrap { min-height: 420px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(12px, 2vw, 20px); }
 
 .prose { max-width: 70ch; }
 .prose p { font-size: 1.02rem; }
